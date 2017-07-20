@@ -3,3 +3,6 @@ preset: laravel
 finder:
   exclude:
     - "tests"
+    - "app/Providers/AuthServiceProvider.php"
+    - "public/index.php"
+    - "server.php"
