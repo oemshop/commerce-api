@@ -1,8 +1,16 @@
 preset: laravel
 
+linting: true
+
+enabled:
+  - strict
+  - unalign_double_arrow
+
+disabled:
+  - short_array_syntax
+
 finder:
   exclude:
     - "tests"
-    - "app/Providers/AuthServiceProvider.php"
-    - "public/index.php"
-    - "server.php"
+  name:
+    - "*.php"
