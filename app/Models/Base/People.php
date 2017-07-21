@@ -2,8 +2,8 @@
 
 namespace App\Models\Base;
 
-use Illuminate\Database\Eloquent\Model;
 use App\Traits\Query\Searchable;
+use Illuminate\Database\Eloquent\Model;
 
 class People extends Model
 {
