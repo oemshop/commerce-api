@@ -4,10 +4,13 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Auth\AuthenticationException;
+use App\Traits\Responses\ResponseError;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 class Handler extends ExceptionHandler
 {
+    use ResponseError;
+
     /**
      * A list of the exception types that should not be reported.
      *
@@ -44,6 +47,16 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        // if have a http code, the exception as render in a response error.
+        if ($exception->getCode() != 0) {
+            $httpCode = $this->isHttpException($exception) ? $exception->getStatusCode() : 400;
+            $response = [
+                'message' => $exception->getMessage(),
+            ];
+
+            return $this->responseError($response, $httpCode, get_class($exception));
+        }
+
         return parent::render($request, $exception);
     }
 
