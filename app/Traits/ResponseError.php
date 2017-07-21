@@ -9,13 +9,13 @@ trait ResponseError
     /**
      * Return a response json with error layout.
      *
-     * @param  Array   $data
-     * @param  integer $httpCode
+     * @param  array   $data
+     * @param  int     $httpCode
      * @param  string  $message
      *
      * @return json
      */
-    protected function responseError(Array $messages, $httpCode = 500, $type = 'API_ERROR')
+    protected function responseError(array $messages, $httpCode = 500, $type = 'API_ERROR')
     {
         return Response::json([
             'error' => true,

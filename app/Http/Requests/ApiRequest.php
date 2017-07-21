@@ -2,8 +2,8 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
 use App\Traits\Responses\ResponseError;
+use Illuminate\Foundation\Http\FormRequest;
 
 class ApiRequest extends FormRequest
 {

@@ -9,12 +9,12 @@ trait ResponseSuccess
     /**
      * Return a response json with success layout.
      *
-     * @param  Array   $data
-     * @param  integer $httpCode
+     * @param  array $data
+     * @param  int   $httpCode
      *
      * @return json
      */
-    protected function responseSuccess(Array $data, $httpCode = 200)
+    protected function responseSuccess(array $data, $httpCode = 200)
     {
         return Response::json([
             'success' => true,

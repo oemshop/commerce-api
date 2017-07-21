@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Base;
 
 use JWTAuth;
-use App\Http\Requests\Base\LoginRequest;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Base\LoginRequest;
 use Tymon\JWTAuth\Exceptions\JWTException;
 
 class AuthController extends Controller
