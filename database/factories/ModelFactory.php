@@ -32,3 +32,14 @@ $factory->define(App\Models\Base\User::class, function (Faker\Generator $faker) 
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Models\Catalog\Brand::class, function (Faker\Generator $faker) {
+    static $account_id;
+
+    $faker->addProvider(new \Faker\Provider\pt_BR\Text($faker));
+
+    return [
+        'account_id' => $account_id ?: $account_id = $this->create(App\Models\Base\Account::class)->id,
+        'name' => $faker->title,
+    ];
+});
