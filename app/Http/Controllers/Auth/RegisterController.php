@@ -2,16 +2,23 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Models\Base\Account;
+use App\Models\Base\User;
 use App\Models\Base\Person;
+use App\Models\Base\Account;
 use App\Models\Base\PersonAddress;
 use App\Models\Base\PersonContact;
-use App\Models\Base\User;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\RegisterRequest;
 
 class RegisterController extends Controller
 {
+    /**
+     * Create a new account.
+     *
+     * @param  RegisterRequest $request
+     *
+     * @return json
+     */
     public function register(RegisterRequest $request)
     {
         // create new account.
