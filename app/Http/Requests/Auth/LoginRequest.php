@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Base;
+namespace App\Http\Requests\Auth;
 
 use App\Http\Requests\ApiRequest;
 
@@ -14,20 +14,6 @@ class LoginRequest extends ApiRequest
     public function authorize()
     {
         return true;
-    }
-
-    /**
-     * Get the validation messages that apply in the error response.
-     *
-     * @return array
-     */
-    public function messages()
-    {
-        return [
-            'email.required' => 'Por favor informe seu email',
-            'email.email' => 'O email informado é inválido',
-            'password.required' => 'Por favor informe sua senha',
-        ];
     }
 
     /**

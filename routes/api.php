@@ -1,3 +1,4 @@
 <?php
 
-Route::post('/auth', 'Base\AuthController@authenticate');
+Route::post('/auth', 'Auth\AuthController@authenticate');
+Route::post('/register', 'Auth\RegisterController@register');

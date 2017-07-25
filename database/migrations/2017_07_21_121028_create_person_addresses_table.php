@@ -17,7 +17,7 @@ class CreatePersonAddressesTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('person_id')->nullable()->unsigned();
             $table->string('title');
-            $table->string('zipcode');
+            $table->string('zipcode', 20);
             $table->string('street');
             $table->string('number', 20);
             $table->string('complement');

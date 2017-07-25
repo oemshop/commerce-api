@@ -9,4 +9,6 @@ use Illuminate\Auth\Authenticatable as AuthenticableTrait;
 class User extends Model implements Authenticatable
 {
     use AuthenticableTrait;
+
+    protected $fillable = ['email', 'password'];
 }

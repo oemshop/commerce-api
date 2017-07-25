@@ -17,7 +17,7 @@ class CreatePersonContactsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('person_id')->nullable()->unsigned();
             $table->string('title');
-            $table->string('phone');
+            $table->string('phone', 20);
             $table->string('observation')->nullable();
             $table->timestamps();
             $table->foreign('person_id')->references('id')->on('persons')->onDelete('cascade');

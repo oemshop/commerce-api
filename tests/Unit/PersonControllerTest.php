@@ -3,18 +3,18 @@
 namespace Tests\Unit;
 
 use Tests\TestCase;
-use App\Models\Base\People;
+use App\Models\Base\Person;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
-class PeopleControllerTest extends TestCase
+class PersonControllerTest extends TestCase
 {
     use DatabaseMigrations, DatabaseTransactions;
 
     public function testTntSearch()
     {
-        $data = factory(People::class, 10)->create();
-        $query = People::search($data->first()->name);
+        $data = factory(Person::class, 10)->create();
+        $query = Person::search($data->first()->name);
 
         $this->assertEquals($query->first()->toArray(), $data->first()->toArray());
     }
